@@ -7,6 +7,7 @@ import constants.AttributeConst;
 import constants.JpaConst;
 import models.Employee;
 
+// model→viewmodelなどへの変換を行うクラス
 public class EmployeeConverter {
 	public static Employee toModel(EmployeeView ev) {
 		return new Employee(
