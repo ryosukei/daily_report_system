@@ -20,11 +20,12 @@ public class ReportAction extends ActionBase {
 	@Override
 	public void process() throws ServletException, IOException {
 
-		service = new ReportService();
+		service = new ReportService(); //追記
 
-		//メソッドを実行
-		invoke();
-		service.close();
+        //メソッドを実行
+        invoke();
+
+        service.close(); //追記
 	}
 
 	public void index() throws ServletException, IOException {
