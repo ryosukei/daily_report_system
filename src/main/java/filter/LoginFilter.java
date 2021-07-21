@@ -54,10 +54,12 @@ public class LoginFilter implements Filter {
 			String action = request.getParameter(ForwardConst.ACT.getValue());
 			String command = request.getParameter(ForwardConst.CMD.getValue());
 			EmployeeView ev = (EmployeeView) session.getAttribute(AttributeConst.LOGIN_EMP.getValue());
+			System.out.println(ev + "EmployeeView");
 			if (ev == null) {
-				if (!ForwardConst.ACT_AUTH.getValue().equals(action)
+				System.out.println("ログインしてない時");
+				if (!(ForwardConst.ACT_AUTH.getValue().equals(action)
 						&& (ForwardConst.CMD_SHOW_LOGIN.getValue().equals(command)
-								|| ForwardConst.CMD_LOGIN.getValue().equals(command))) {
+								|| ForwardConst.CMD_LOGIN.getValue().equals(command)))) {
 					((HttpServletResponse) response).sendRedirect(
 							contextPath
 									+ "?action=" + ForwardConst.ACT_AUTH.getValue()
